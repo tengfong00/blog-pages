@@ -1,0 +1,22 @@
+{
+    "name": "SimpsonFong Blog",
+    "short_name": "Sims Blog",
+    "theme_color": "#49b1f5",
+    "background_color": "#49b1f5",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+        "src": "../images/src/pwa/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+        },
+        {
+            "src": "../images/src/pwa/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+      ],
+      "splash_pages": null
+  }

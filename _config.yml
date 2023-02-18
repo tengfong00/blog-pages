@@ -11,10 +11,73 @@ author: Simpson Fong
 language: en
 timezone: 'Asia/Kuala_Lumpur'
 
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
+
+nofollow:
+  enable: true
+  field: site
+  exclude:
+    - 'exclude1.com'
+    - 'exclude2.com'
+
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  template: ./sitemap_template.xml
+  template_txt: ./sitemap_template.txt
+  rel: false
+  tags: true
+  categories: true
+
+minify:
+  enable: true
+  html:
+    enable: true
+  css:
+    enable: true
+    exclude:
+      - '*.min.css'
+  js:
+    enable: true
+    exclude:
+      - '*.min.js'
+  svg:
+    enable: true
+    include:
+      - '*.svg'
+      - '!*.min.svg'
+  gzip:
+    enable: true
+    include:
+      - '*.html'
+      - '*.css'
+      - '*.js'
+      - '*.txt'
+      - '*.ttf'
+      - '*.atom'
+      - '*.stl'
+      - '*.xml'
+      - '*.svg'
+      - '*.eot'
+      - '*.json'
+
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://example.com
-permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink/ 
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -64,6 +127,10 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
+
+markdown:
+    plugins:
+      - '@renbaoshuo/markdown-it-katex'
 
 # Category & Tag
 default_category: uncategorized
